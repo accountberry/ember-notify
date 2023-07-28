@@ -96,7 +96,7 @@ export default Component.extend({
         if (this.get('isDestroyed') || !parentView || !parentView.get('messages')) return;
         parentView.get('messages').removeObject(this.get('message'));
         this.set('message.visible', null);
-        if (this.message.onClose) {
+        if (this.get('message.onClose') && !this.get('message.visible') && this.get('message.closed')) {
           this.message.onClose();
         }
       }
