@@ -24,7 +24,7 @@ function showLevel(level) {
     var message = {
       closeAfter: Number(model.closeAfter),
       onClose: function() {
-        console.log('this happened')
+        console.log('onClose happened')
       }
     };
     message[model.html ? 'html' : 'text'] = model.text;
