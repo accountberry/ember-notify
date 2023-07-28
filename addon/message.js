@@ -8,5 +8,6 @@ export default EmberObject.extend({
   type: 'info',
   closeAfter: undefined,
   visible: undefined,
+  onClose: undefined,
   classNames: EMPTY_ARRAY
 });
