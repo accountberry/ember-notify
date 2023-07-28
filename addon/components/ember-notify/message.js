@@ -84,8 +84,8 @@ export default Component.extend({
       this.set('message.closed', true);
       this.set('message.visible', false);
 
-      if (this.onClose) {
-        this.onClose();
+      if (this.message.onClose) {
+        this.message.onClose();
       }
 
       var removeAfter = this.get('message.removeAfter') || this.constructor.removeAfter;

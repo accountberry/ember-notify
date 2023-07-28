@@ -22,7 +22,10 @@ export default Route.extend({
 function showLevel(level) {
   return function(model) {
     var message = {
-      closeAfter: Number(model.closeAfter)
+      closeAfter: Number(model.closeAfter),
+      onClose: function() {
+        console.log('this happened')
+      }
     };
     message[model.html ? 'html' : 'text'] = model.text;
     this.get('notify').show(level, message);
