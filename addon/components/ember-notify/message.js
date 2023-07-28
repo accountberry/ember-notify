@@ -84,10 +84,6 @@ export default Component.extend({
       this.set('message.closed', true);
       this.set('message.visible', false);
 
-      if (this.message.onClose) {
-        this.message.onClose();
-      }
-
       var removeAfter = this.get('message.removeAfter') || this.constructor.removeAfter;
       if (removeAfter) {
         this.run.later(this, remove, removeAfter);
@@ -100,6 +96,9 @@ export default Component.extend({
         if (this.get('isDestroyed') || !parentView || !parentView.get('messages')) return;
         parentView.get('messages').removeObject(this.get('message'));
         this.set('message.visible', null);
+        if (this.message.onClose) {
+          this.message.onClose();
+        }
       }
     }
   }
