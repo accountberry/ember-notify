@@ -10,6 +10,7 @@ export default Route.extend({
       html: false
     };
   },
+
   actions: {
     info: showLevel('info'),
     alert: showLevel('alert'),
